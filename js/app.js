@@ -1,4 +1,6 @@
 let valorTotal=0;
+document.getElementById('lista-produtos').innerHTML='';
+document.getElementById('valor-total').textContent='R$ 0'
 function adicionar() {
     const produtoSelect = document.getElementById('produto');
     const quantidadeInput = document.getElementById('quantidade');
@@ -23,7 +25,7 @@ function adicionar() {
     itemCarrinho.innerHTML = `<span class="texto-azul">${quantidade}x</span> ${produtoNome} <span class="texto-azul">R$${totalProduto.toFixed(2)}</span>`;
     listaProdutos.appendChild(itemCarrinho);
     document.getElementById('valor-total').textContent = `R$${valorTotal.toFixed(2)}`;
-    
+    document.getElementById('quantidade').value=0;
 }
 function limpar(){
     valorTotal = 0;
